@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap');
+
+.letter-page {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Paper */
+.letter-paper {
+  position: relative;
+  width: min(90vw, 500px);
+  min-height: 650px;
+  background: #f8f1df;
+  border-radius: 8px;
+  padding: 40px 30px;
+  box-shadow:
+    0 0 30px rgba(255, 105, 180, 0.25);
+  overflow: hidden;
+}
+
+/* Notebook Lines */
+.letter-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 27px,
+      rgba(180, 160, 120, 0.25) 28px
+    );
+  pointer-events: none;
+}
+
+/* Heading */
+.letter-heading {
+  position: relative;
+  z-index: 2;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #d63384;
+  margin-bottom: 30px;
+}
+
+/* Content */
+.letter-content {
+  position: relative;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  color: #4a2d2d;
+  white-space: pre-line;
+}
+
+/* Decorative Hearts */
+.heart-decor {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1.4rem;
+  z-index: 2;
+  animation: floatHearts 3s ease-in-out infinite alternate;
+}
+
+.signature {
+  margin-top: 30px;
+  text-align: right;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #d63384;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(8px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .letter-paper {
+    padding: 30px 20px;
+    min-height: 550px;
+  }
+
+  .letter-heading {
+    font-size: 2rem;
+  }
+
+  .letter-content {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+}
